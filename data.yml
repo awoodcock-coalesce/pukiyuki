@@ -14,11 +14,17 @@ locations:
       "27":
         database: AWOODCOCK_DEV
         schema: SOURCE_DATA
+      "32":
+        database: PYUKI_DEV
+        schema: SOURCE_DATA
   TARGET:
     mappingDefinitions:
       "27":
         database: AWOODCOCK_QA
         schema: PUBLIC
+      "32":
+        database: PYUKI_QA
+        schema: REPORTING
 macros: {}
 packages: {}
 projects: {}
