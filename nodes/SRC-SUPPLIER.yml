@@ -1,0 +1,123 @@
+steps:
+  SUPPLIER-08fd5494-7c3e-47bf-a901-4fb91a41a4d6:
+    operation:
+      database: ""
+      dataset: ""
+      deployEnabled: true
+      description: ""
+      locationName: SRC
+      metadata:
+        columns:
+          - acceptedValues:
+              strictMatch: true
+              values: []
+            appliedColumnTests: {}
+            columnReference:
+              columnCounter: 243daa58-0627-4819-8095-35afcfef312a
+              stepCounter: 08fd5494-7c3e-47bf-a901-4fb91a41a4d6
+            config: {}
+            dataType: NUMBER(38,0)
+            defaultValue: ""
+            description: ""
+            name: S_SUPPKEY
+            nullable: true
+            primaryKey: false
+            uniqueKey: false
+          - acceptedValues:
+              strictMatch: true
+              values: []
+            appliedColumnTests: {}
+            columnReference:
+              columnCounter: 4a987122-a010-480c-8966-9f941bf1fb6f
+              stepCounter: 08fd5494-7c3e-47bf-a901-4fb91a41a4d6
+            config: {}
+            dataType: VARCHAR(25)
+            defaultValue: ""
+            description: ""
+            name: S_NAME
+            nullable: true
+            primaryKey: false
+            uniqueKey: false
+          - acceptedValues:
+              strictMatch: true
+              values: []
+            appliedColumnTests: {}
+            columnReference:
+              columnCounter: f11c2746-01fd-4eb7-9e37-7ebc59a8867e
+              stepCounter: 08fd5494-7c3e-47bf-a901-4fb91a41a4d6
+            config: {}
+            dataType: VARCHAR(40)
+            defaultValue: ""
+            description: ""
+            name: S_ADDRESS
+            nullable: true
+            primaryKey: false
+            uniqueKey: false
+          - acceptedValues:
+              strictMatch: true
+              values: []
+            appliedColumnTests: {}
+            columnReference:
+              columnCounter: b020a34f-0b05-4d7d-b31f-ef1363176e7b
+              stepCounter: 08fd5494-7c3e-47bf-a901-4fb91a41a4d6
+            config: {}
+            dataType: NUMBER(38,0)
+            defaultValue: ""
+            description: ""
+            name: S_NATIONKEY
+            nullable: true
+            primaryKey: false
+            uniqueKey: false
+          - acceptedValues:
+              strictMatch: true
+              values: []
+            appliedColumnTests: {}
+            columnReference:
+              columnCounter: f7d4e7bf-6426-4837-8c46-c7804a2ec1dc
+              stepCounter: 08fd5494-7c3e-47bf-a901-4fb91a41a4d6
+            config: {}
+            dataType: VARCHAR(15)
+            defaultValue: ""
+            description: ""
+            name: S_PHONE
+            nullable: true
+            primaryKey: false
+            uniqueKey: false
+          - acceptedValues:
+              strictMatch: true
+              values: []
+            appliedColumnTests: {}
+            columnReference:
+              columnCounter: 037888bc-f448-438c-8635-1470f0ff3a05
+              stepCounter: 08fd5494-7c3e-47bf-a901-4fb91a41a4d6
+            config: {}
+            dataType: NUMBER(12,2)
+            defaultValue: ""
+            description: ""
+            name: S_ACCTBAL
+            nullable: true
+            primaryKey: false
+            uniqueKey: false
+          - acceptedValues:
+              strictMatch: true
+              values: []
+            appliedColumnTests: {}
+            columnReference:
+              columnCounter: 7609bfa5-889d-4f5a-97fa-20c880afa6a8
+              stepCounter: 08fd5494-7c3e-47bf-a901-4fb91a41a4d6
+            config: {}
+            dataType: VARCHAR(101)
+            defaultValue: ""
+            description: ""
+            name: S_COMMENT
+            nullable: true
+            primaryKey: false
+            uniqueKey: false
+        join:
+          joinCondition: FROM {{ ref('SRC', 'SUPPLIER') }}
+      name: SUPPLIER
+      schema: ""
+      sqlType: Source
+      table: SUPPLIER
+      type: sourceInput
+    stepCounter: 08fd5494-7c3e-47bf-a901-4fb91a41a4d6
