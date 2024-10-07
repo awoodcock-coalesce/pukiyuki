@@ -1,0 +1,8 @@
+fileVersion: 1
+id: "16"
+name: "TC8: JSON Read + FLATTEN"
+steps:
+  - ca1ceaf9-9a0f-4974-a979-f1589fdf178d
+  - f71a6e21-1335-4f89-bb52-55eac56b11aa
+type: Subgraph
+version: 1

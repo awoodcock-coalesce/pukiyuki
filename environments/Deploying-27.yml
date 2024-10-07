@@ -1,0 +1,17 @@
+fileVersion: 1
+id: "27"
+mappingDefinitions:
+  SOURCE:
+    database: ""
+    schema: ""
+  TARGET:
+    database: ""
+    schema: ""
+  TPCH-RAW:
+    database: ""
+    schema: ""
+  TPCH-RAW1000:
+    database: ""
+    schema: ""
+name: Deploying
+type: Environment

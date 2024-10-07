@@ -1,0 +1,104 @@
+fileVersion: 1
+id: 8dfcef81-5fcf-44d8-99d2-e01fb5a79266
+name: TC3_ORDER_SUMMARY
+operation:
+  config:
+    insertStrategy: INSERT
+    postSQL: ""
+    preSQL: ""
+    testsEnabled: true
+    truncateBefore: true
+  database: ""
+  deployEnabled: true
+  description: ""
+  isMultisource: false
+  locationName: TARGET
+  materializationType: table
+  metadata:
+    appliedNodeTests: []
+    columns:
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: a96488cf-6ee4-49e6-9e57-1252fb266f21
+          stepCounter: 8dfcef81-5fcf-44d8-99d2-e01fb5a79266
+        config: {}
+        dataType: VARCHAR(10)
+        description: ""
+        name: L_SHIPMODE
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 54e75928-fbb8-4a9b-b308-6bf767b4cc20
+                stepCounter: 46996bed-1fc3-45e8-9bb2-1858f7aa0dd0
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: f5a3399b-b333-4bab-bb76-bd4bd61abb39
+          stepCounter: 8dfcef81-5fcf-44d8-99d2-e01fb5a79266
+        config: {}
+        dataType: NUMBER(12,2)
+        description: ""
+        name: L_EXTENDEDPRICE_MAX
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 3c84f2a0-5721-486e-8127-bc95f5c7db38
+                stepCounter: 46996bed-1fc3-45e8-9bb2-1858f7aa0dd0
+            transform: MAX(L_EXTENDEDPRICE)
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 46130a45-39a7-4b27-95bd-f086b56b5984
+          stepCounter: 8dfcef81-5fcf-44d8-99d2-e01fb5a79266
+        config: {}
+        dataType: NUMBER(12,2)
+        description: ""
+        name: L_EXTENDEDPRICE_MIN
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 3c84f2a0-5721-486e-8127-bc95f5c7db38
+                stepCounter: 46996bed-1fc3-45e8-9bb2-1858f7aa0dd0
+            transform: MIN(L_EXTENDEDPRICE)
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 83f38447-7073-41f7-9752-36f0102acdbf
+          stepCounter: 8dfcef81-5fcf-44d8-99d2-e01fb5a79266
+        config: {}
+        dataType: NUMBER(12,2)
+        description: ""
+        name: L_QUANTITY
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 89e356ee-e5c6-4f92-a363-9efae3ecd4b9
+                stepCounter: 46996bed-1fc3-45e8-9bb2-1858f7aa0dd0
+            transform: SUM(L_QUANTITY)
+    cteString: ""
+    enabledColumnTestIDs: []
+    sourceMapping:
+      - aliases:
+          ORDERS: 22d02884-b660-4aa6-ab49-e3812fa4076a
+          TC2_SOURCE: 46996bed-1fc3-45e8-9bb2-1858f7aa0dd0
+        customSQL:
+          customSQL: ""
+        dependencies:
+          - locationName: SOURCE
+            nodeName: TC2_SOURCE
+          - locationName: TPCH-RAW
+            nodeName: ORDERS
+        join:
+          joinCondition: |-
+            FROM {{ ref('SOURCE', 'TC2_SOURCE') }} "TC2_SOURCE"
+            INNER JOIN {{ ref('TPCH-RAW', 'ORDERS') }} "ORDERS"
+            ON "TC2_SOURCE"."L_ORDERKEY" = "ORDERS"."O_ORDERKEY"
+            WHERE "O_ORDERDATE"<'2018-01-01'
+            GROUP BY "L_SHIPMODE"
+        name: TC3_ORDER_SUMMARY
+        noLinkRefs: []
+  name: TC3_ORDER_SUMMARY
+  overrideSQL: false
+  schema: ""
+  sqlType: Stage
+  type: sql
+  version: 1
+type: Node

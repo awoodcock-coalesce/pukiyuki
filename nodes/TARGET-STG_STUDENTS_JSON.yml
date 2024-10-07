@@ -1,0 +1,117 @@
+fileVersion: 1
+id: 6eb06201-e88b-4245-9a7a-f59015b9ff30
+name: STG_STUDENTS_JSON
+operation:
+  config:
+    insertStrategy: INSERT
+    postSQL: ""
+    preSQL: ""
+    testsEnabled: true
+    truncateBefore: true
+  database: ""
+  deployEnabled: true
+  description: ""
+  isMultisource: false
+  locationName: TARGET
+  materializationType: table
+  metadata:
+    appliedNodeTests: []
+    columns:
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 40cf8352-5934-42a5-bb25-33653a3e0010
+          stepCounter: 6eb06201-e88b-4245-9a7a-f59015b9ff30
+        config: {}
+        dataType: VARCHAR(16777216)
+        description: ""
+        name: NAME
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: b66718ef-b797-4f59-bb0a-ed96b7e7a6da
+                stepCounter: f71a6e21-1335-4f89-bb52-55eac56b11aa
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 9e23d198-86c6-4ae3-8c7c-639a4b861453
+          stepCounter: 6eb06201-e88b-4245-9a7a-f59015b9ff30
+        config: {}
+        dataType: VARIANT
+        description: ""
+        name: SCORES
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 082d0a98-a068-434a-b4c8-0adbba914a6f
+                stepCounter: f71a6e21-1335-4f89-bb52-55eac56b11aa
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 01622433-f2bd-41ba-a057-1fc4ab1529e2
+          stepCounter: 6eb06201-e88b-4245-9a7a-f59015b9ff30
+        config: {}
+        dataType: NUMBER(38,0)
+        description: ""
+        name: U_ID
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 7553ffc9-864c-44a2-905e-b372b60d8bf9
+                stepCounter: f71a6e21-1335-4f89-bb52-55eac56b11aa
+            transform: ""
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: bef6ff6c-8294-4e49-9ab9-4bf029535754
+          stepCounter: 6eb06201-e88b-4245-9a7a-f59015b9ff30
+        config: {}
+        dataType: DOUBLE
+        description: ""
+        name: score
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 082d0a98-a068-434a-b4c8-0adbba914a6f
+                stepCounter: f71a6e21-1335-4f89-bb52-55eac56b11aa
+            transform: "\"SCORES\".value:\"score\"::DOUBLE"
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: e46fa234-436d-4800-8cb0-041b491d9fb7
+          stepCounter: 6eb06201-e88b-4245-9a7a-f59015b9ff30
+        config: {}
+        dataType: STRING
+        description: ""
+        name: type
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 082d0a98-a068-434a-b4c8-0adbba914a6f
+                stepCounter: f71a6e21-1335-4f89-bb52-55eac56b11aa
+            transform: "\"SCORES\".value:\"type\"::STRING"
+    cteString: ""
+    enabledColumnTestIDs: []
+    sourceMapping:
+      - aliases: {}
+        customSQL:
+          customSQL: ""
+        dependencies:
+          - locationName: SOURCE
+            nodeName: STUDENTS_JSON
+        join:
+          joinCondition: |-
+            FROM {{ ref('SOURCE', 'STUDENTS_JSON') }} "STUDENTS_JSON", 
+            lateral flatten(input => "SCORES", OUTER => TRUE) "SCORES"
+        name: STG_STUDENTS_JSON
+        noLinkRefs: []
+  name: STG_STUDENTS_JSON
+  overrideSQL: false
+  schema: ""
+  sqlType: Stage
+  type: sql
+  version: 1
+type: Node

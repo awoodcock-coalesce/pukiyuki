@@ -1,0 +1,9 @@
+fileVersion: 1
+id: "12"
+name: "TC3: JOIN + Aggregation"
+steps:
+  - 22d02884-b660-4aa6-ab49-e3812fa4076a
+  - 46996bed-1fc3-45e8-9bb2-1858f7aa0dd0
+  - 8dfcef81-5fcf-44d8-99d2-e01fb5a79266
+type: Subgraph
+version: 1

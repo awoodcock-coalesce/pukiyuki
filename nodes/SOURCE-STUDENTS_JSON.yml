@@ -1,0 +1,77 @@
+fileVersion: 1
+id: f71a6e21-1335-4f89-bb52-55eac56b11aa
+name: STUDENTS_JSON
+operation:
+  database: ""
+  dataset: ""
+  deployEnabled: true
+  description: ""
+  locationName: SOURCE
+  metadata:
+    columns:
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: b66718ef-b797-4f59-bb0a-ed96b7e7a6da
+          stepCounter: f71a6e21-1335-4f89-bb52-55eac56b11aa
+        config: {}
+        dataType: VARCHAR(16777216)
+        defaultValue: ""
+        description: ""
+        name: NAME
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 082d0a98-a068-434a-b4c8-0adbba914a6f
+          stepCounter: f71a6e21-1335-4f89-bb52-55eac56b11aa
+        config: {}
+        dataType: VARIANT
+        defaultValue: ""
+        description: ""
+        name: SCORES
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 7553ffc9-864c-44a2-905e-b372b60d8bf9
+          stepCounter: f71a6e21-1335-4f89-bb52-55eac56b11aa
+        config: {}
+        dataType: NUMBER(38,0)
+        defaultValue: ""
+        description: ""
+        name: U_ID
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        transform: ""
+        uniqueKey: false
+    join:
+      joinCondition: FROM {{ ref('SOURCE', 'STUDENTS_JSON') }}
+  name: STUDENTS_JSON
+  schema: ""
+  sqlType: Source
+  table: STUDENTS_JSON
+  type: sourceInput
+  version: 1
+type: Node

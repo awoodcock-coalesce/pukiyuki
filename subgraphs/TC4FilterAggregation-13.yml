@@ -1,0 +1,12 @@
+fileVersion: 1
+id: "13"
+name: "TC4: Filter, Aggregation"
+steps:
+  - 22d02884-b660-4aa6-ab49-e3812fa4076a
+  - 6a56fd1f-5e8d-46ae-969a-5c77034f2e26
+  - b0e604a6-b69e-4461-9297-c63bf64c2514
+  - b5374483-613f-41c0-9e8d-86b32eb2659b
+  - ce84fe33-1f81-42ec-a72c-a7546011bf50
+  - e464d4cc-9190-4c94-8b56-10f7b04e5f73
+type: Subgraph
+version: 1
