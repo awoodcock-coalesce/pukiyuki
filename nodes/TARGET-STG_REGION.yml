@@ -1,0 +1,95 @@
+fileVersion: 1
+id: 6ae5f244-3648-4846-9397-5cc1b2d6daf8
+name: STG_REGION
+operation:
+  config:
+    insertStrategy: INSERT
+    postSQL: use warehouse compute_wh;
+    preSQL: ""
+    testsEnabled: true
+    truncateBefore: true
+  database: ""
+  deployEnabled: true
+  description: ""
+  isMultisource: false
+  locationName: TARGET
+  materializationType: table
+  metadata:
+    appliedNodeTests: []
+    columns:
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: aa103d4a-12c9-48ae-9541-8248c7750fb7
+          stepCounter: 6ae5f244-3648-4846-9397-5cc1b2d6daf8
+        config: {}
+        dataType: NUMBER(38,0)
+        description: ""
+        name: R_REGIONKEY
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 42233b31-ea99-4833-acc3-0aa91eb58049
+                stepCounter: a1171a6a-6e0b-43cb-ac13-6d2be610f750
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 57d7ce26-4950-4b79-8ba6-75b1cae7b9d6
+          stepCounter: 6ae5f244-3648-4846-9397-5cc1b2d6daf8
+        config: {}
+        dataType: VARCHAR(25)
+        description: ""
+        name: R_NAME
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 6c92b5b3-2adb-43ce-9e17-ba83de819fdf
+                stepCounter: a1171a6a-6e0b-43cb-ac13-6d2be610f750
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: d484de36-7ab7-4205-a8a5-63a90202796c
+          stepCounter: 6ae5f244-3648-4846-9397-5cc1b2d6daf8
+        config: {}
+        dataType: VARCHAR(152)
+        description: ""
+        name: R_COMMENT
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 977557f5-a89b-4457-b4e0-b1a532fa8aa0
+                stepCounter: a1171a6a-6e0b-43cb-ac13-6d2be610f750
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 78f61693-8f34-40ee-a799-2d7f347eaf9f
+          stepCounter: 6ae5f244-3648-4846-9397-5cc1b2d6daf8
+        config: {}
+        dataType: TIMESTAMP_LTZ(9)
+        description: ""
+        name: R_LOAD_TIMESTAMP
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 9380a1a6-9ef0-4dcb-9c88-c796f9a7c9b6
+                stepCounter: a1171a6a-6e0b-43cb-ac13-6d2be610f750
+            transform: ""
+    cteString: ""
+    enabledColumnTestIDs: []
+    sourceMapping:
+      - aliases: {}
+        customSQL:
+          customSQL: ""
+        dependencies:
+          - locationName: SOURCE
+            nodeName: REGION
+        join:
+          joinCondition: FROM {{ ref('SOURCE', 'REGION') }} "REGION"
+        name: STG_REGION
+        noLinkRefs: []
+  name: STG_REGION
+  overrideSQL: false
+  schema: ""
+  sqlType: Stage
+  type: sql
+  version: 1
+type: Node
