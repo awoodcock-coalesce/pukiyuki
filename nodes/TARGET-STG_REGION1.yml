@@ -5,7 +5,7 @@ operation:
   config:
     insertStrategy: INSERT
     postSQL: use warehouse dev_xs_awoodcock;
-    preSQL: ""
+    preSQL: use warehouse compute_wh;
     testsEnabled: true
     truncateBefore: true
   database: ""
