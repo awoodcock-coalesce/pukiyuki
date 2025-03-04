@@ -1,0 +1,79 @@
+fileVersion: 1
+id: 880b02c8-7d67-42b8-a154-2899f74242df
+name: STG_COUNTRY_FAILED_RECORDS
+operation:
+  config:
+    insertStrategy: INSERT
+    postSQL: ""
+    preSQL: ""
+    testsEnabled: true
+    truncateBefore: true
+  database: ""
+  deployEnabled: true
+  description: ""
+  isMultisource: false
+  locationName: RAW
+  materializationType: table
+  metadata:
+    appliedNodeTests: []
+    columns:
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 63047ab0-cfc3-4275-929a-06c7fbbf714e
+          stepCounter: 880b02c8-7d67-42b8-a154-2899f74242df
+        config: {}
+        dataType: NUMBER(18,0)
+        description: ""
+        name: COUNTRY_ID
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: fd23f4c2-6a30-443e-b325-d0a26d37a6b7
+                stepCounter: 3d05066b-f92d-40e0-81e9-761e0cdec3a2
+            transform: ""
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 13e04ec8-2829-4d97-9463-79e5ee0c29a8
+          stepCounter: 880b02c8-7d67-42b8-a154-2899f74242df
+        config: {}
+        dataType: NUMBER(38,0)
+        defaultValue: ""
+        description: ""
+        keyColumnType: None
+        name: NUMBER_OF_ROWS
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: "0"
+                stepCounter: "0"
+            transform: COUNT(*)
+        systemColumnType: None
+    cteString: ""
+    enabledColumnTestIDs: []
+    sourceMapping:
+      - aliases:
+          STG_COUNTRY_TESTS: 3d05066b-f92d-40e0-81e9-761e0cdec3a2
+        customSQL:
+          customSQL: ""
+        dependencies:
+          - locationName: RAW
+            nodeName: STG_COUNTRY_TESTS
+        join:
+          joinCondition: |-
+            FROM {{ ref('RAW', 'STG_COUNTRY_TESTS') }} "STG_COUNTRY_TESTS"
+            GROUP BY
+                  COUNTRY_ID
+            HAVING
+                  COUNT(*) > 1
+        name: STG_COUNTRY_FAILED_RECORDS
+        noLinkRefs: []
+  name: STG_COUNTRY_FAILED_RECORDS
+  overrideSQL: false
+  schema: ""
+  sqlType: Stage
+  type: sql
+  version: 1
+type: Node

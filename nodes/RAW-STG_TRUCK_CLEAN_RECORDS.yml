@@ -1,0 +1,280 @@
+fileVersion: 1
+id: 1a9c64dd-653d-40cf-b873-8de3d6912136
+name: STG_TRUCK_CLEAN_RECORDS
+operation:
+  config:
+    insertStrategy: INSERT
+    postSQL: ""
+    preSQL: ""
+    testsEnabled: true
+    truncateBefore: true
+  database: ""
+  deployEnabled: true
+  description: ""
+  isMultisource: false
+  locationName: RAW
+  materializationType: table
+  metadata:
+    appliedNodeTests: []
+    columns:
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: ac522e6c-9a76-4afb-98e6-6df6c4863d14
+          stepCounter: 1a9c64dd-653d-40cf-b873-8de3d6912136
+        config: {}
+        dataType: NUMBER(38,0)
+        description: ""
+        name: TRUCK_ID
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 05c4ae26-eeea-4eee-8f70-9cac62d030a6
+                stepCounter: 23f98415-897a-49af-9777-be07d9be579f
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 11aaffe1-7aa5-4336-9a14-7feb7a7d91dc
+          stepCounter: 1a9c64dd-653d-40cf-b873-8de3d6912136
+        config: {}
+        dataType: NUMBER(38,0)
+        description: ""
+        name: MENU_TYPE_ID
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 571ecf3a-ee1e-4dd9-b871-2a71d0cd7cc6
+                stepCounter: 23f98415-897a-49af-9777-be07d9be579f
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: d8876425-a57a-4593-b37d-46d9231567fd
+          stepCounter: 1a9c64dd-653d-40cf-b873-8de3d6912136
+        config: {}
+        dataType: VARCHAR(16777216)
+        description: ""
+        name: PRIMARY_CITY
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 3190a513-96ba-443c-85d8-ad71e0db3331
+                stepCounter: 23f98415-897a-49af-9777-be07d9be579f
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: f5957334-05d3-488f-9622-103220a7b836
+          stepCounter: 1a9c64dd-653d-40cf-b873-8de3d6912136
+        config: {}
+        dataType: VARCHAR(16777216)
+        description: ""
+        name: REGION
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: d03cf361-7090-4b64-b006-fe41b1ba5169
+                stepCounter: 23f98415-897a-49af-9777-be07d9be579f
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 85a15777-3233-447c-909f-60976f7bc576
+          stepCounter: 1a9c64dd-653d-40cf-b873-8de3d6912136
+        config: {}
+        dataType: VARCHAR(16777216)
+        description: ""
+        name: ISO_REGION
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 8402f164-3585-4bb5-b22a-d536acafff86
+                stepCounter: 23f98415-897a-49af-9777-be07d9be579f
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 61abd3b7-ccc0-4c3e-9f2f-ddc1613e049b
+          stepCounter: 1a9c64dd-653d-40cf-b873-8de3d6912136
+        config: {}
+        dataType: VARCHAR(16777216)
+        description: ""
+        name: COUNTRY
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: f2a33eb4-4edd-4541-a347-542003d7a7e1
+                stepCounter: 23f98415-897a-49af-9777-be07d9be579f
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: aabb5f72-05b8-411e-b49e-3dd2c77ec0db
+          stepCounter: 1a9c64dd-653d-40cf-b873-8de3d6912136
+        config: {}
+        dataType: VARCHAR(16777216)
+        description: ""
+        name: ISO_COUNTRY_CODE
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 60036f8b-792a-400e-af1e-f16f3392b3c9
+                stepCounter: 23f98415-897a-49af-9777-be07d9be579f
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 98b5c787-d689-4a92-9a07-972fcc7fd527
+          stepCounter: 1a9c64dd-653d-40cf-b873-8de3d6912136
+        config: {}
+        dataType: NUMBER(38,0)
+        description: ""
+        name: FRANCHISE_FLAG
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: cf013086-191f-428f-9d25-c4b394e90cf3
+                stepCounter: 23f98415-897a-49af-9777-be07d9be579f
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 85caf16a-1b4e-4a06-9a51-bd73c51a4e57
+          stepCounter: 1a9c64dd-653d-40cf-b873-8de3d6912136
+        config: {}
+        dataType: NUMBER(38,0)
+        description: ""
+        name: YEAR
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: b3356433-c823-4d9c-a517-53ac8c47bb6c
+                stepCounter: 23f98415-897a-49af-9777-be07d9be579f
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 1683a224-ce6b-4972-8068-90f31a407a69
+          stepCounter: 1a9c64dd-653d-40cf-b873-8de3d6912136
+        config: {}
+        dataType: VARCHAR(16777216)
+        description: ""
+        name: MAKE
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 46745bff-63a5-4ab6-8db9-75cb2433cf4c
+                stepCounter: 23f98415-897a-49af-9777-be07d9be579f
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 2f0a2b49-1844-4a17-9dc2-140a8e2252f7
+          stepCounter: 1a9c64dd-653d-40cf-b873-8de3d6912136
+        config: {}
+        dataType: VARCHAR(16777216)
+        description: ""
+        name: MODEL
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 9c268130-c62c-4d43-9800-6a5c4db4a790
+                stepCounter: 23f98415-897a-49af-9777-be07d9be579f
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: ad594aac-bea7-4450-9a88-483053fdc71e
+          stepCounter: 1a9c64dd-653d-40cf-b873-8de3d6912136
+        config: {}
+        dataType: NUMBER(38,0)
+        description: ""
+        name: EV_FLAG
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: d2463dcc-55be-4f54-9c1c-6ea0f4ab34d0
+                stepCounter: 23f98415-897a-49af-9777-be07d9be579f
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 654280d4-330d-4801-904e-fd6d7d43fa22
+          stepCounter: 1a9c64dd-653d-40cf-b873-8de3d6912136
+        config: {}
+        dataType: NUMBER(38,0)
+        description: ""
+        name: FRANCHISE_ID
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: a8509e16-62a2-470b-a7a7-403a3e450bbf
+                stepCounter: 23f98415-897a-49af-9777-be07d9be579f
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: f1acd90d-f5f5-4d8e-b153-e1f167708687
+          stepCounter: 1a9c64dd-653d-40cf-b873-8de3d6912136
+        config: {}
+        dataType: DATE
+        description: ""
+        name: TRUCK_OPENING_DATE
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 30dbd369-3ec7-424a-ab62-6f6b9d291bee
+                stepCounter: 23f98415-897a-49af-9777-be07d9be579f
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 6b91e7c1-5714-4ad9-8f78-10dfac56fb17
+          stepCounter: 1a9c64dd-653d-40cf-b873-8de3d6912136
+        config: {}
+        dataType: NUMBER(38,0)
+        description: ""
+        name: TRUCK_ID_NULL_FLAG
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 9f0ab0c9-2318-4670-9ec6-bd20ae3cf266
+                stepCounter: 23f98415-897a-49af-9777-be07d9be579f
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: daf69c96-32c0-4ac4-a2c2-c958c0b55464
+          stepCounter: 1a9c64dd-653d-40cf-b873-8de3d6912136
+        config: {}
+        dataType: NUMBER(38,0)
+        description: ""
+        name: MENU_TYPE_ID_NULL_FLAG
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: f3bc2f76-d4f4-4888-b2c4-ccc6b11da7b4
+                stepCounter: 23f98415-897a-49af-9777-be07d9be579f
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: c1b03691-91c1-4c2c-a1aa-06e95c8002b9
+          stepCounter: 1a9c64dd-653d-40cf-b873-8de3d6912136
+        config: {}
+        dataType: NUMBER(38,0)
+        description: ""
+        name: TEST_FAILURE_COUNT
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 59022018-941f-4eaa-b0ed-1b955bef627c
+                stepCounter: 23f98415-897a-49af-9777-be07d9be579f
+            transform: ""
+    cteString: ""
+    enabledColumnTestIDs: []
+    sourceMapping:
+      - aliases:
+          STG_TRUCK_TESTS: 23f98415-897a-49af-9777-be07d9be579f
+        customSQL:
+          customSQL: ""
+        dependencies:
+          - locationName: RAW
+            nodeName: STG_TRUCK_TESTS
+        join:
+          joinCondition: |-
+            FROM {{ ref('RAW', 'STG_TRUCK_TESTS') }} "STG_TRUCK_TESTS"
+            WHERE "STG_TRUCK_TESTS"."TEST_FAILURE_COUNT"=0
+        name: STG_TRUCK_CLEAN_RECORDS
+        noLinkRefs: []
+  name: STG_TRUCK_CLEAN_RECORDS
+  overrideSQL: false
+  schema: ""
+  sqlType: Stage
+  type: sql
+  version: 1
+type: Node

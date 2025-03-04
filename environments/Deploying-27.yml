@@ -1,0 +1,11 @@
+fileVersion: 1
+id: "27"
+mappingDefinitions:
+  RAW:
+    database: ""
+    schema: ""
+  TARGET:
+    database: ""
+    schema: ""
+name: Deploying
+type: Environment

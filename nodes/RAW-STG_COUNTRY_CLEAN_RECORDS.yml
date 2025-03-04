@@ -1,0 +1,93 @@
+fileVersion: 1
+id: 14a211bc-e420-4d5c-9223-74e658f11916
+name: STG_COUNTRY_CLEAN_RECORDS
+operation:
+  config:
+    insertStrategy: INSERT
+    postSQL: ""
+    preSQL: ""
+    testsEnabled: true
+    truncateBefore: true
+  database: ""
+  deployEnabled: true
+  description: ""
+  isMultisource: false
+  locationName: RAW
+  materializationType: table
+  metadata:
+    appliedNodeTests: []
+    columns:
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: c3b54134-a91a-4f7b-884b-fba6dec09b15
+          stepCounter: 14a211bc-e420-4d5c-9223-74e658f11916
+        config: {}
+        dataType: NUMBER(19,0)
+        description: ""
+        name: CITY_ID
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: f6cbc065-2c26-4957-8822-3e66d768dce7
+                stepCounter: 3d05066b-f92d-40e0-81e9-761e0cdec3a2
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 77e40524-cf5a-4d33-a0a5-50f181a7a791
+          stepCounter: 14a211bc-e420-4d5c-9223-74e658f11916
+        config: {}
+        dataType: VARCHAR(16777216)
+        description: ""
+        name: CITY
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: b3c02a23-09d3-4f18-8943-8f688b8a2c07
+                stepCounter: 3d05066b-f92d-40e0-81e9-761e0cdec3a2
+            transform: ""
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 0c9c42cc-8d28-4d60-b172-2ba8a57b0826
+          stepCounter: 14a211bc-e420-4d5c-9223-74e658f11916
+        config: {}
+        dataType: NUMBER
+        defaultValue: ""
+        description: ""
+        keyColumnType: None
+        name: NUMNER_OF_RECORDS
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: "0"
+                stepCounter: "0"
+            transform: COUNT(*)
+        systemColumnType: None
+    cteString: ""
+    enabledColumnTestIDs: []
+    sourceMapping:
+      - aliases:
+          STG_COUNTRY_TESTS: 3d05066b-f92d-40e0-81e9-761e0cdec3a2
+        customSQL:
+          customSQL: ""
+        dependencies:
+          - locationName: RAW
+            nodeName: STG_COUNTRY_TESTS
+        join:
+          joinCondition: |-
+            FROM {{ ref('RAW', 'STG_COUNTRY_TESTS') }} "STG_COUNTRY_TESTS"
+            GROUP BY
+                  "CITY_ID", "CITY"
+                HAVING
+                  COUNT(*) = 1
+        name: STG_COUNTRY_CLEAN_RECORDS
+        noLinkRefs: []
+  name: STG_COUNTRY_CLEAN_RECORDS
+  overrideSQL: false
+  schema: ""
+  sqlType: Stage
+  type: sql
+  version: 1
+type: Node
