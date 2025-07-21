@@ -1,0 +1,6 @@
+excludeSelector: ""
+fileVersion: 1
+id: "39"
+includeSelector: "{ location: TARGET name: STG_MENU } OR { location: RAW name: STG_MENU_WAREHOUSE_SWITCH } OR { location: RAW name: DIM_MENU_WAREHOUSE_SWITCH }"
+name: warehouse_switch_job
+type: Job

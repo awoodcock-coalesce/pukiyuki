@@ -1,0 +1,8 @@
+fileVersion: 1
+id: "31"
+name: Warehouse Switch Test
+steps:
+  - ac4e1704-f120-41cf-bdb0-c76daba6fde4
+  - b63b73a5-3c9e-4e0b-9fb2-c198a0f333d6
+  - bbdaf157-87f6-4eb1-b024-20f0aa85c831
+type: Subgraph
