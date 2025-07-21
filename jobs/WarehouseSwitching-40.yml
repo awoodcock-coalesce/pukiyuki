@@ -1,0 +1,6 @@
+excludeSelector: ""
+fileVersion: 1
+id: "40"
+includeSelector: "{ location: RAW name: ORDER_DETAIL_38M } OR { location: RAW name: ORDER_HEADER_14M } OR { location: TARGET name: STG_ORDERS } OR { location: TARGET name: FCT_ORDERS } OR { location: TARGET name: V_ORDERS }"
+name: Warehouse Switching
+type: Job
