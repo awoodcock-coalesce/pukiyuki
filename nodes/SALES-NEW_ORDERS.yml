@@ -1,0 +1,73 @@
+fileVersion: 1
+id: 28b02d95-b75b-4eef-95c0-5f7aeea39df5
+name: NEW_ORDERS
+operation:
+  database: ""
+  deployEnabled: true
+  description: ""
+  locationName: SALES
+  metadata:
+    columns:
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: ab8f4082-425e-4bfb-9d28-614d10c1ad6d
+          stepCounter: 28b02d95-b75b-4eef-95c0-5f7aeea39df5
+        config: {}
+        dataType: TIMESTAMP_NTZ(9)
+        defaultValue: ""
+        description: ""
+        name: ORDER_TS
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: ed0173ef-1942-43ef-8611-babce710db46
+          stepCounter: 28b02d95-b75b-4eef-95c0-5f7aeea39df5
+        config: {}
+        dataType: NUMBER(12,2)
+        defaultValue: ""
+        description: ""
+        name: ORDER_AMOUNT
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 5095b303-5947-46ee-a488-6cd94fd56a7d
+          stepCounter: 28b02d95-b75b-4eef-95c0-5f7aeea39df5
+        config: {}
+        dataType: VARCHAR(16777216)
+        defaultValue: ""
+        description: ""
+        name: MENU_ITEM_NAME
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        transform: ""
+        uniqueKey: false
+  name: NEW_ORDERS
+  schema: ""
+  sqlType: Source
+  type: sourceInput
+  version: 1
+type: Node

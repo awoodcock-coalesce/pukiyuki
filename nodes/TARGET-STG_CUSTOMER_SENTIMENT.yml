@@ -1,0 +1,84 @@
+fileVersion: 1
+id: e078ab43-cad1-4fc3-b99a-d73d7143ae8e
+name: STG_CUSTOMER_SENTIMENT
+operation:
+  config:
+    insertStrategy: INSERT
+    postSQL: ""
+    preSQL: ""
+    testsEnabled: true
+    truncateBefore: true
+  database: ""
+  deployEnabled: true
+  description: ""
+  isMultisource: false
+  locationName: TARGET
+  materializationType: table
+  metadata:
+    appliedNodeTests: []
+    columns:
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 2b6b5cde-8d89-49cb-93c1-ead37ad2183e
+          stepCounter: e078ab43-cad1-4fc3-b99a-d73d7143ae8e
+        config: {}
+        dataType: NUMBER(38,0)
+        description: ""
+        name: CUSTOMER_ID
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 3a4d8b74-36a7-4631-a969-353995b0e444
+                stepCounter: da7fbe3f-21e8-42dd-b092-6f7ae3c1763a
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 78414832-cddc-4062-870c-e857cf227024
+          stepCounter: e078ab43-cad1-4fc3-b99a-d73d7143ae8e
+        config: {}
+        dataType: NUMBER(38,0)
+        description: ""
+        name: STAR_RATING
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: c82f34ab-7748-4ce4-9ff5-04264dc3c145
+                stepCounter: da7fbe3f-21e8-42dd-b092-6f7ae3c1763a
+            transform: AVG("LLM_REVIEWS"."STAR_RATING")
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 6be770ba-7489-4fd6-8576-6e76eceb2017
+          stepCounter: e078ab43-cad1-4fc3-b99a-d73d7143ae8e
+        config: {}
+        dataType: VARCHAR(16777216)
+        description: ""
+        name: REVIEW_SENTIMENT
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: dee5049e-3139-4943-bfa0-e5b799c1ebfd
+                stepCounter: da7fbe3f-21e8-42dd-b092-6f7ae3c1763a
+            transform: AVG("LLM_REVIEWS"."REVIEW_SENTIMENT")
+    cteString: ""
+    enabledColumnTestIDs: []
+    sourceMapping:
+      - aliases:
+          LLM_REVIEWS: da7fbe3f-21e8-42dd-b092-6f7ae3c1763a
+        customSQL:
+          customSQL: ""
+        dependencies:
+          - locationName: TARGET
+            nodeName: LLM_REVIEWS
+        join:
+          joinCondition: |-
+            FROM {{ ref('TARGET', 'LLM_REVIEWS') }} "LLM_REVIEWS"
+            GROUP BY ALL
+        name: STG_CUSTOMER_SENTIMENT
+        noLinkRefs: []
+  name: STG_CUSTOMER_SENTIMENT
+  overrideSQL: false
+  schema: ""
+  sqlType: Stage
+  type: sql
+  version: 1
+type: Node

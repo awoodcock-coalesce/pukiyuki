@@ -1,0 +1,142 @@
+fileVersion: 1
+id: da7fbe3f-21e8-42dd-b092-6f7ae3c1763a
+name: LLM_REVIEWS
+operation:
+  config:
+    exby:
+      items:
+        - {}
+    extractfunction: false
+    insertStrategy: INSERT
+    pby:
+      items:
+        - {}
+    postSQL: ""
+    preSQL: ""
+    sby:
+      items:
+        - spartColName:
+            columnCounter: dee5049e-3139-4943-bfa0-e5b799c1ebfd
+            stepCounter: da7fbe3f-21e8-42dd-b092-6f7ae3c1763a
+    sentimentfunction: true
+    summarizefunction: false
+    tby:
+      items:
+        - {}
+    testsEnabled: true
+    translatefunction: false
+    truncateBefore: true
+  database: ""
+  deployEnabled: true
+  description: ""
+  isMultisource: false
+  locationName: TARGET
+  materializationType: table
+  metadata:
+    appliedNodeTests: []
+    columns:
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 5728e6ea-a733-4cb4-aaa4-a96b7629b2ba
+          stepCounter: da7fbe3f-21e8-42dd-b092-6f7ae3c1763a
+        config: {}
+        dataType: VARCHAR(16777216)
+        description: ""
+        name: REVIEW_ID
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 53a4caad-54c0-4828-a584-606903ee746a
+                stepCounter: bc63cd7f-9101-479d-98f6-02f743c19a36
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 3a4d8b74-36a7-4631-a969-353995b0e444
+          stepCounter: da7fbe3f-21e8-42dd-b092-6f7ae3c1763a
+        config: {}
+        dataType: NUMBER(38,0)
+        description: ""
+        name: CUSTOMER_ID
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 3645e5da-cf2a-4339-a548-3031f54a4570
+                stepCounter: bc63cd7f-9101-479d-98f6-02f743c19a36
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: c82f34ab-7748-4ce4-9ff5-04264dc3c145
+          stepCounter: da7fbe3f-21e8-42dd-b092-6f7ae3c1763a
+        config: {}
+        dataType: NUMBER(38,0)
+        description: ""
+        name: STAR_RATING
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 2f378cb8-1c26-4838-8447-4784b044b157
+                stepCounter: bc63cd7f-9101-479d-98f6-02f743c19a36
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 40926a9c-e3a2-47ed-b233-5bfe3a632fe7
+          stepCounter: da7fbe3f-21e8-42dd-b092-6f7ae3c1763a
+        config: {}
+        dataType: VARCHAR(16777216)
+        description: ""
+        name: REVIEW_TEXT
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 14f80a44-ea4c-42dd-9d48-214487fd9065
+                stepCounter: bc63cd7f-9101-479d-98f6-02f743c19a36
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: dee5049e-3139-4943-bfa0-e5b799c1ebfd
+          stepCounter: da7fbe3f-21e8-42dd-b092-6f7ae3c1763a
+        config: {}
+        dataType: VARCHAR(16777216)
+        description: ""
+        name: REVIEW_SENTIMENT
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 14f80a44-ea4c-42dd-9d48-214487fd9065
+                stepCounter: bc63cd7f-9101-479d-98f6-02f743c19a36
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: dc380f7d-16e4-4349-91bc-0f51cc0a5b2a
+          stepCounter: da7fbe3f-21e8-42dd-b092-6f7ae3c1763a
+        config: {}
+        dataType: DATE
+        description: ""
+        name: REVIEW_DATE
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 00f0e840-ec4a-4f28-873e-a9dd51d0154b
+                stepCounter: bc63cd7f-9101-479d-98f6-02f743c19a36
+            transform: ""
+    cteString: ""
+    enabledColumnTestIDs: []
+    sourceMapping:
+      - aliases:
+          STG_REVIEWS: bc63cd7f-9101-479d-98f6-02f743c19a36
+        customSQL:
+          customSQL: ""
+        dependencies:
+          - locationName: TARGET
+            nodeName: STG_REVIEWS
+        join:
+          joinCondition: FROM {{ ref('TARGET', 'STG_REVIEWS') }} "STG_REVIEWS"
+        name: LLM_REVIEWS
+        noLinkRefs: []
+  name: LLM_REVIEWS
+  overrideSQL: false
+  schema: ""
+  sqlType: Cortex:::271
+  type: sql
+  version: 1
+type: Node

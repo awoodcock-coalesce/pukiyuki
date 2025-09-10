@@ -1,0 +1,110 @@
+fileVersion: 1
+id: bc63cd7f-9101-479d-98f6-02f743c19a36
+name: STG_REVIEWS
+operation:
+  config:
+    insertStrategy: INSERT
+    postSQL: ""
+    preSQL: ""
+    testsEnabled: true
+    truncateBefore: true
+  database: ""
+  deployEnabled: true
+  description: ""
+  isMultisource: false
+  locationName: TARGET
+  materializationType: table
+  metadata:
+    appliedNodeTests: []
+    columns:
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 53a4caad-54c0-4828-a584-606903ee746a
+          stepCounter: bc63cd7f-9101-479d-98f6-02f743c19a36
+        config: {}
+        dataType: VARCHAR(16777216)
+        description: ""
+        name: REVIEW_ID
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: c899b2d4-1d83-48b5-a11c-f4f111da52a6
+                stepCounter: 85731f80-68f1-4820-a76d-6c8b66a9e552
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 3645e5da-cf2a-4339-a548-3031f54a4570
+          stepCounter: bc63cd7f-9101-479d-98f6-02f743c19a36
+        config: {}
+        dataType: NUMBER(38,0)
+        description: ""
+        name: CUSTOMER_ID
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 6908e3fa-891a-4f5c-b1e9-aa04ca25d519
+                stepCounter: 85731f80-68f1-4820-a76d-6c8b66a9e552
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 2f378cb8-1c26-4838-8447-4784b044b157
+          stepCounter: bc63cd7f-9101-479d-98f6-02f743c19a36
+        config: {}
+        dataType: NUMBER(38,0)
+        description: ""
+        name: STAR_RATING
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: d93a1094-db7d-4115-95a4-34fa140baad7
+                stepCounter: 85731f80-68f1-4820-a76d-6c8b66a9e552
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 14f80a44-ea4c-42dd-9d48-214487fd9065
+          stepCounter: bc63cd7f-9101-479d-98f6-02f743c19a36
+        config: {}
+        dataType: VARCHAR(16777216)
+        description: ""
+        name: REVIEW_TEXT
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: be403b85-a5f6-43ac-b068-d73e5ed131f8
+                stepCounter: 85731f80-68f1-4820-a76d-6c8b66a9e552
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 00f0e840-ec4a-4f28-873e-a9dd51d0154b
+          stepCounter: bc63cd7f-9101-479d-98f6-02f743c19a36
+        config: {}
+        dataType: DATE
+        description: ""
+        name: REVIEW_DATE
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 80f1cee0-c1a8-4cb0-bbe1-7f632ab824a7
+                stepCounter: 85731f80-68f1-4820-a76d-6c8b66a9e552
+            transform: ""
+    cteString: ""
+    enabledColumnTestIDs: []
+    sourceMapping:
+      - aliases:
+          REVIEWS: 85731f80-68f1-4820-a76d-6c8b66a9e552
+        customSQL:
+          customSQL: ""
+        dependencies:
+          - locationName: SALES
+            nodeName: REVIEWS
+        join:
+          joinCondition: FROM {{ ref('SALES', 'REVIEWS') }} "REVIEWS"
+        name: STG_REVIEWS
+        noLinkRefs: []
+  name: STG_REVIEWS
+  overrideSQL: false
+  schema: ""
+  sqlType: Stage
+  type: sql
+  version: 1
+type: Node

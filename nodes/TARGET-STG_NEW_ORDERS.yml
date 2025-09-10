@@ -1,0 +1,82 @@
+fileVersion: 1
+id: 29e07c22-89da-4fb3-9874-4487bdd3a07d
+name: STG_NEW_ORDERS
+operation:
+  config:
+    insertStrategy: INSERT
+    postSQL: ""
+    preSQL: ""
+    testsEnabled: true
+    truncateBefore: true
+  database: ""
+  deployEnabled: true
+  description: ""
+  isMultisource: false
+  locationName: TARGET
+  materializationType: table
+  metadata:
+    appliedNodeTests: []
+    columns:
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: cf592163-31a3-4321-a7ac-f445d2d47df5
+          stepCounter: 29e07c22-89da-4fb3-9874-4487bdd3a07d
+        config: {}
+        dataType: TIMESTAMP_NTZ(9)
+        description: ""
+        name: ORDER_TS
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: ab8f4082-425e-4bfb-9d28-614d10c1ad6d
+                stepCounter: 28b02d95-b75b-4eef-95c0-5f7aeea39df5
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 903c09ca-90e1-4aa3-96a7-075a36826ad3
+          stepCounter: 29e07c22-89da-4fb3-9874-4487bdd3a07d
+        config: {}
+        dataType: NUMBER(12,2)
+        description: ""
+        name: ORDER_AMOUNT
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: ed0173ef-1942-43ef-8611-babce710db46
+                stepCounter: 28b02d95-b75b-4eef-95c0-5f7aeea39df5
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 128fd146-183d-4986-9cdf-700b672c7d57
+          stepCounter: 29e07c22-89da-4fb3-9874-4487bdd3a07d
+        config: {}
+        dataType: VARCHAR(16777216)
+        description: ""
+        name: MENU_ITEM_NAME
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 5095b303-5947-46ee-a488-6cd94fd56a7d
+                stepCounter: 28b02d95-b75b-4eef-95c0-5f7aeea39df5
+            transform: ""
+    cteString: ""
+    enabledColumnTestIDs: []
+    sourceMapping:
+      - aliases:
+          NEW_ORDERS: 28b02d95-b75b-4eef-95c0-5f7aeea39df5
+        customSQL:
+          customSQL: ""
+        dependencies:
+          - locationName: SALES
+            nodeName: NEW_ORDERS
+        join:
+          joinCondition: FROM {{ ref('SALES', 'NEW_ORDERS') }} "NEW_ORDERS"
+        name: STG_NEW_ORDERS
+        noLinkRefs: []
+  name: STG_NEW_ORDERS
+  overrideSQL: false
+  schema: ""
+  sqlType: Stage
+  type: sql
+  version: 1
+type: Node

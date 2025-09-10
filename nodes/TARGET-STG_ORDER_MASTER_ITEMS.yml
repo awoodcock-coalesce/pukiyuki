@@ -1,0 +1,110 @@
+fileVersion: 1
+id: c9228f5a-1c69-4012-a7d3-abebfc9f980e
+name: STG_ORDER_MASTER_ITEMS
+operation:
+  config:
+    insertStrategy: INSERT
+    postSQL: ""
+    preSQL: ""
+    testsEnabled: true
+    truncateBefore: true
+  database: ""
+  deployEnabled: true
+  description: ""
+  isMultisource: false
+  locationName: TARGET
+  materializationType: table
+  metadata:
+    appliedNodeTests: []
+    columns:
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 05939bf1-c80d-4b01-b7ab-977738da856e
+          stepCounter: c9228f5a-1c69-4012-a7d3-abebfc9f980e
+        config: {}
+        dataType: TIMESTAMP_NTZ
+        description: ""
+        name: ORDER_TS
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 4b97d795-efb5-4637-b325-03cd4606eb27
+                stepCounter: 1340ba15-fd85-4cf0-a800-23f43fc1235e
+            transform: "\"FCT_ORDER_MASTER\".\"ORDER_TS\"::date"
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 7603b7e8-17c1-4831-af7f-c91ff01cc868
+          stepCounter: c9228f5a-1c69-4012-a7d3-abebfc9f980e
+        config: {}
+        dataType: NUMBER(38,4)
+        description: ""
+        name: ORDER_AMOUNT
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: c6e0231d-e9bd-4387-8af2-feb46f4daa31
+                stepCounter: 1340ba15-fd85-4cf0-a800-23f43fc1235e
+            transform: sum("FCT_ORDER_MASTER"."ORDER_AMOUNT")
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 13f306cf-4424-4965-b6d9-a1de3c587e35
+          stepCounter: c9228f5a-1c69-4012-a7d3-abebfc9f980e
+        config: {}
+        dataType: VARCHAR(16777216)
+        description: ""
+        name: MENU_ITEM_NAME
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 33a3d36b-2b43-470a-a6be-5aac0e49f742
+                stepCounter: fb1a2b8e-711a-4d7b-a271-8ca443654e46
+            transform: ""
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: b4636a38-92b9-4fe5-abcf-51add745aebb
+          stepCounter: c9228f5a-1c69-4012-a7d3-abebfc9f980e
+        config: {}
+        dataType: BOOLEAN
+        defaultValue: ""
+        description: ""
+        keyColumnType: None
+        name: LABEL
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: "0"
+                stepCounter: "0"
+            transform: case when sum("FCT_ORDER_MASTER"."ORDER_AMOUNT") > 5800000 then TRUE else false END
+        systemColumnType: None
+    cteString: ""
+    enabledColumnTestIDs: []
+    sourceMapping:
+      - aliases:
+          DIM_MENU: fb1a2b8e-711a-4d7b-a271-8ca443654e46
+          FCT_ORDER_MASTER: 1340ba15-fd85-4cf0-a800-23f43fc1235e
+        customSQL:
+          customSQL: ""
+        dependencies:
+          - locationName: TARGET
+            nodeName: DIM_MENU
+          - locationName: TARGET
+            nodeName: FCT_ORDER_MASTER
+        join:
+          joinCondition: |-
+            FROM {{ ref('TARGET', 'FCT_ORDER_MASTER') }} "FCT_ORDER_MASTER"
+            INNER JOIN {{ ref('TARGET', 'DIM_MENU') }} "DIM_MENU"
+            ON "FCT_ORDER_MASTER"."MENU_ITEM_ID" = "DIM_MENU"."MENU_ITEM_ID"
+            WHERE "ITEM_CATEGORY" = 'Beverage'
+            GROUP BY ALL
+        name: STG_ORDER_MASTER_ITEMS
+        noLinkRefs: []
+  name: STG_ORDER_MASTER_ITEMS
+  overrideSQL: false
+  schema: ""
+  sqlType: Stage
+  type: sql
+  version: 1
+type: Node

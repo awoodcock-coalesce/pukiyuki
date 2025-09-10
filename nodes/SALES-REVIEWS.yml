@@ -1,0 +1,111 @@
+fileVersion: 1
+id: 85731f80-68f1-4820-a76d-6c8b66a9e552
+name: REVIEWS
+operation:
+  database: ""
+  deployEnabled: true
+  description: ""
+  locationName: SALES
+  metadata:
+    columns:
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: c899b2d4-1d83-48b5-a11c-f4f111da52a6
+          stepCounter: 85731f80-68f1-4820-a76d-6c8b66a9e552
+        config: {}
+        dataType: VARCHAR(16777216)
+        defaultValue: ""
+        description: ""
+        name: REVIEW_ID
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 6908e3fa-891a-4f5c-b1e9-aa04ca25d519
+          stepCounter: 85731f80-68f1-4820-a76d-6c8b66a9e552
+        config: {}
+        dataType: NUMBER(38,0)
+        defaultValue: ""
+        description: ""
+        name: CUSTOMER_ID
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: d93a1094-db7d-4115-95a4-34fa140baad7
+          stepCounter: 85731f80-68f1-4820-a76d-6c8b66a9e552
+        config: {}
+        dataType: NUMBER(38,0)
+        defaultValue: ""
+        description: ""
+        name: STAR_RATING
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: be403b85-a5f6-43ac-b068-d73e5ed131f8
+          stepCounter: 85731f80-68f1-4820-a76d-6c8b66a9e552
+        config: {}
+        dataType: VARCHAR(16777216)
+        defaultValue: ""
+        description: ""
+        name: REVIEW_TEXT
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 80f1cee0-c1a8-4cb0-bbe1-7f632ab824a7
+          stepCounter: 85731f80-68f1-4820-a76d-6c8b66a9e552
+        config: {}
+        dataType: DATE
+        defaultValue: ""
+        description: ""
+        name: REVIEW_DATE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        transform: ""
+        uniqueKey: false
+  name: REVIEWS
+  schema: ""
+  sqlType: Source
+  type: sourceInput
+  version: 1
+type: Node
