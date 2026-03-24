@@ -1,0 +1,11 @@
+fileVersion: 1
+id: "27"
+mappingDefinitions:
+  SAMPLE:
+    database: AWOODCOCK_DEV
+    schema: NY_TAXI_DEV
+  WORK:
+    database: AWOODCOCK_QA
+    schema: REPORTING
+name: Deploying
+type: Environment

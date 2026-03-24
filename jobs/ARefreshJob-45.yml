@@ -1,0 +1,6 @@
+excludeSelector: ""
+fileVersion: 1
+id: "45"
+includeSelector: "{ location: SAMPLE name: TRIPS } OR { location: WORK name: STG_TRIPS }"
+name: A Refresh Job
+type: Job
