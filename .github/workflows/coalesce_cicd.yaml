@@ -3,7 +3,6 @@ name: Deploy to Environment
 on:
   push:
     branches:
-      - main
       - cli_github_actions
   workflow_dispatch:
 
