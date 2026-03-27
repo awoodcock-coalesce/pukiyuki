@@ -27,9 +27,8 @@ jobs:
 
       - name: Write Snowflake private key
         run: |
-          mkdir -p .secrets
-          echo "${{ secrets.SNOWFLAKE_PRIVATE_KEY }}" > .secrets/rsa_key.p8
-          chmod 600 .secrets/rsa_key.p8
+          umask 077
+          echo "${{ secrets.SNOWFLAKE_PRIVATE_KEY }}" > rsa_key.p8
 
       - name: Install Coalesce CLI
         run: npm install -g @coalescesoftware/coa@${{ env.COA_VERSION }}
